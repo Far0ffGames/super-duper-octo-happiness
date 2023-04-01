@@ -127,7 +127,7 @@ html,body,iframe,canvas,div {
     flex-direction:column;
     flex-grow:0;
     width:100%;
-    height:100vh;
+    height:92vh;
     background:#333;
 }
 

@@ -1,0 +1,365 @@
+<style>
+    @import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;
+    200;
+    300;
+    400;
+    500;
+    600;
+    700;
+    800;
+    900&display=swap';
+    *{
+        margin:0
+    }
+    html{
+        scroll-behavior:smooth
+    }
+    body{
+        font-family:montserrat,sans-serif;
+        background-color:#1c1c1c;
+        overflow-x:hidden
+    }
+    .main{
+        display:flex;
+        align-items:center;
+        height:98vh;
+        margin-left:9vw;
+        margin-top:-7vw
+    }
+    .main h1{
+        font-size:6vw;
+        font-weight:900;
+        text-transform:uppercase;
+        color:#fff;
+        z-index:1;
+        line-height:7vw
+    }
+    .main h1 span{
+        font-size:9vw;
+        color:#616161
+    }
+    p{
+        position:absolute;
+        bottom:41%;
+        font-size:1.6vw;
+        font-weight:500;
+        color:#fff;
+        z-index:1
+    }
+    
+    p1{
+        position:absolute;
+        bottom:40%;
+        font-size:1.6vw;
+        font-weight:500;
+        color:#fff;
+        z-index:1
+    }
+    .partners{
+        position:absolute;
+        width:50%;
+        top:10.5vw;
+        left:calc(50% + 4vw);
+        font-size:1.5vw
+    }
+    .partners h2{
+        font-size:2.5vw;
+        left:8%;
+        line-height:2vw
+    }
+    .partner{
+        position:relative;
+        width:41vw;
+        height:8.5vw;
+        display:flex;
+        background-color:#222;
+        z-index:1;
+        border-radius:1vw;
+        padding:1vw;
+        margin-top:1vw;
+        transition:all .3s ease;
+        border:none;
+        cursor:pointer;
+        user-select:none
+    }
+    .partner:hover{
+        transform:scale(1.01)
+    }
+    .partner.weblfg{
+        background-color:#1f2029
+    }
+    .partner.kazwire{
+        background-color:#1d1d1d
+    }
+    .partner img{
+        width:8vw;
+        height:8vw;
+        border-radius:50%;
+        object-fit:cover;
+        pointer-events:none;
+        transition:.3s all ease
+    }
+    .partner h3{
+        font-size:3vw;
+        margin-left:.8vw;
+        font-weight:800
+    }
+    .partner p{
+        position:absolute;
+        top:4vw;
+        left:9vw;
+        width:75%;
+        font-size:1.3vw;
+        font-weight:600;
+        color:#fff;
+        margin-left:1vw;
+        margin-top:.5vw
+    }
+    .reviews{
+        display:flex
+    }
+    .review{
+        top:10vw;
+        width:50%;
+        font-size:1.5vw;
+        background-color:#1f2029;
+        border-radius:1vw;
+        padding:1vw;
+        margin-top:1vw;
+        cursor:pointer;
+        user-select:none
+    }
+    .review h3{
+        font-size:3vw
+    }
+    .review img{
+        width:6vw;
+        height:6vw;
+        object-fit:cover;
+        border-radius:1vw
+    }
+    .review p{
+        font-size:1.3vw;
+        font-weight:600;
+        color:#fff;
+        margin-left:1vw;
+        margin-top:.5vw
+    }
+    #popup{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-color:#11111194;
+        z-index:9999;
+        display:none;
+        justify-content:center;
+        align-items:center
+    }
+    #clickBox{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-color:transparent
+    }
+    .close{
+        position:absolute;
+        top:.5vw;
+        right:.5vw;
+        width:3vw;
+        height:3vw;
+        border-radius:50%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        user-select:none
+    }
+    .close i{
+        font-size:3vw;
+        color:#e77e7e
+    }
+    #popup .content{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:50%;
+        height:50vh;
+        background-color:#1b1c24;
+        box-shadow:0 0 1vw 0 #2b2c38;
+        color:#fff;
+        border-radius:1vw;
+        padding:1vw;
+        padding-top:4vw
+    }
+    #popup .content h1{
+        font-size:6vw;
+        font-weight:800;
+        text-align:center
+    }
+    #popup .content img{
+        width:8vw;
+        height:8vw;
+        object-fit:cover;
+        margin-left:1vw;
+        margin-top:.5vw
+    }
+    #popup .discord{
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
+        font-size:2vw;
+        margin-top:2vw;
+        font-weight:800;
+        color:#fff;
+        cursor:pointer;
+        user-select:none
+    }
+    .discord a{
+        color:#fff;
+        font-weight:700;
+        border-radius:1vw;
+        display:inline-flex;
+        align-items:center;
+        padding:1vw 1.5vw;
+        background-color:#e77e7e;
+        text-decoration:none;
+        transition:all .3s ease
+    }
+    .discord a.kazwire{
+        background-color:#0875bb
+    }
+    .discord span{
+        margin-left:1vw
+    }
+    .discord a:hover{
+        transition:all .3s ease;
+        transform:scale(1.01)
+    }
+    .flex{
+        display:flex;
+        justify-content:center;
+        align-items:center
+    }
+    #popup .content p{
+        font-size:1.5vw;
+        font-weight:500;
+        text-align:center;
+        margin-top:1vw;
+        width:90%;
+        margin-left:5%
+    }
+    a{
+        text-decoration:none
+    }
+    .main a{
+        position:absolute
+    }
+    .playbutton{
+        position:absolute;
+        top:62.5%;
+         background: linear-gradient(45deg, #949292, #616161);
+        border:none;
+        border-radius:1vw;
+        color:#fff;
+        font-size:1.8vw;
+        font-weight:600;
+        padding:1.2vw 2.8vw;
+        cursor:pointer;
+        user-select:none;
+        font-family:montserrat,sans-serif;
+        z-index:1;
+        transition:transform .2s ease-in-out
+    }
+    .playbutton:hover {
+        transition:transform .2s ease-in-out;
+         background: linear-gradient(45deg, #616161, #949292);
+        -webkit-animation-name: playbutton-float, playbutton;
+        animation-name: playbutton-float, playbutton;
+      -webkit-animation-duration: .3s, 1.5s;
+      animation-duration: .3s, 1.5s;
+      -webkit-animation-delay: 0s, .3s;
+      animation-delay: 0s, .3s;
+      -webkit-animation-timing-function: ease-out, ease-in-out;
+      animation-timing-function: ease-out, ease-in-out;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-direction: normal, alternate;
+      animation-direction: normal, alternate;
+    }
+    
+    @-webkit-keyframes playbutton {
+      0% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+      }
+      50% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+      }
+      100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+      }
+    }
+    @keyframes playbutton {
+      0% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+      }
+      50% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+      }
+      100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+      }
+    }
+    @-webkit-keyframes playbutton-float {
+      100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+      }
+    }
+    @keyframes playbutton-float {
+      100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+      }
+    }
+    </style>
+    <script src="https://kit.fontawesome.com/8d04029772.js" crossorigin="anonymous"></script>
+    
+    <div class="main" id="main">
+    <h1>Need Games?<span><br>Then...</span></h1>
+    <p>You should choose us! Because we provide</p>
+    <p1>the best unblocked games!</p1>
+    <button class="playbutton">Start Playing Now! <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></button>
+    </div>
+    <div class="partners">
+    <video src="https://firebasestorage.googleapis.com/v0/b/tgchosting-3b72e.appspot.com/o/tgcgames.mp4?alt=media&token=3fad0748-edbf-4d44-933e-0a98c598f70c" autoplay="" loop="" disablepictureinpicture="" height = "270vw" playsinline="" placeholder="blur" class="block rounded-b-xl overflow-hidden"></video>
+    
+    <style>
+     video {
+      box-shadow: 0 0 1vw 0 #616161;
+      display:flex;
+      border-radius: 0.7vw;
+      margin-left: 80px;
+      margin-top: 80px;
+     {
+    </style>
+    </div>
+    </a>
+    </div>
+    
+    
+    </body>
+    </html>
+    

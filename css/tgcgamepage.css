@@ -47,12 +47,12 @@ body {
 
 .navitem:hover {
   transform: scaleX(1.2) scaleY(1.2);
-  background: linear-gradient(45deg, #249022, #185e17);
+  background: linear-gradient(45deg, #949292, #616161));
 
 }
 
 .navitem[current] {
-  background: linear-gradient(45deg, #249022, #185e17);
+  background: linear-gradient(45deg, #949292, #616161);
   color: #FFFFFF;
 }
 
@@ -374,7 +374,7 @@ h1.loader-logo-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, #249022, #185e17);
+  background: linear-gradient(45deg, #949292, #616161);
   font-size: 1.3rem;
   border-radius: 15px;
   cursor: pointer;
